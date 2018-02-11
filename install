@@ -2,15 +2,49 @@
 #Install Bind9 DNS Server Pada Raspbian
 #Jika Ada Error Hubungi saya@rifky.tech
 
+
+#Konfigurasi Jaringan
+sudo rm -rf /etc/network/interfaces
+sudo cp -r interface /etc/network/
+
 #Install BIND9
 sudo apt-get -y install bind9
 
 #Edit /etc/bind/named.conf.local
-rm -rf /etc/bind/named.conf.local
-cp -r named.conf.local /etc/named.conf.local
+sudo rm -rf /etc/bind/named.conf.local
+sudo cp -r named.conf.local /etc/bind/
 
 #creat db domain
-cp -r db.dom /etc/bind/
+sudo cp -r db.dom /etc/bind/
 
 #Creat db ip
-cp -r db.i[ /etc/bind/
+sudo cp -r db.ip /etc/bind/
+
+#Restart BIND9
+sudo service bind9 restart
+
+#Update resolv.conf
+sudo rm -rf /etc/resolv.conf
+sudo cp -r resolv.conf /etc/
+
+#test Ping DNS
+ping -c 5 sekolah.ujian
+
+################################END###########################################SELESAI############################################
+
+echo "###########################################################################################################################"
+echo " "
+echo " "
+echo " "
+echo " Jika Ping Di Atas Ada Reply nya, maka Konfigurasi Selesai, Berikut Informasi Dns Yang Diinstall
+       
+       Domain : sekolah.ujian
+       Ip : 192.168.100.5
+       
+       Terima Kasih, Jika Ada Error silahkan kirim feedback ke saya@rifky.tech
+   
+echo " "
+echo " "
+echo " "
+echo "###########################################################################################################################"
+echo " "
