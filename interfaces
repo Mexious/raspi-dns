@@ -12,4 +12,4 @@ auto eth0
 iface eth0 inet static
 address 192.168.100.5
 netmask 255.255.255.0
-dns-nameserver sekolah.ujian
+dns-nameserver 192.168.100.5
