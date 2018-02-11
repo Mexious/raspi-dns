@@ -5,7 +5,7 @@
 
 #Konfigurasi Jaringan
 sudo rm -rf /etc/network/interfaces
-sudo cp -r interface /etc/network/
+sudo cp -r interfaces /etc/network/
 
 #Install BIND9
 sudo apt-get -y install bind9
